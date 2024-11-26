@@ -32,7 +32,8 @@ public class JdbcV2 {
 			// STEP-V ==> Read data
 			while (rs.next()) {
 				int index = 1;
-				System.out.print(rs.getInt(index++) + " : ");
+				System.out.print(rs.getInt("empno") + " : ");
+				index++;
 				System.out.print(rs.getString(index++) + " : ");
 				System.out.print(rs.getString(index++) + " : ");
 				System.out.print(rs.getInt(index++) + " : ");
