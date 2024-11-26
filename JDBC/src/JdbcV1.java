@@ -1,7 +1,6 @@
 import java.sql.*;
-import java.sql.Connection;
 
-public class Jdbc {
+public class JdbcV1 {
 	public static void main(String[] args) {
 		// total 6 steps
 		final String MYSQLURL = "jdbc:mysql://localhost:3306/knowitdb";
