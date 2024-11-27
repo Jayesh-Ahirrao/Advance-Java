@@ -49,7 +49,24 @@ public class JdbcV2 {
 		} catch (SQLException e) {
 			System.out.println("Connection Rejected");
 		} finally {
-			
+			System.out.println("Clearing resources");
+			try {
+				if (rs != null) {
+					rs.close();
+					System.out.println("Result Set closed");
+				}
+				if (statM != null) {
+					statM.close();
+					System.out.println("Statement closed");
+				}
+				if (con != null) {
+					con.close();
+					System.out.println("DB connection closed");
+				}
+			} catch (SQLException e) {
+				System.out.println("Error while clearing resources");
+			}
 		}
+
 	}
 }
