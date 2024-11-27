@@ -48,6 +48,8 @@ public class JdbcV2 {
 			System.out.println("Driver not found");
 		} catch (SQLException e) {
 			System.out.println("Connection Rejected");
+		} finally {
+			
 		}
 	}
 }

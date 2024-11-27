@@ -23,6 +23,22 @@ public class JdbcV3 {
 			System.out.println("Driver not found");
 		} catch (SQLException e) {
 			System.out.println("Conneciton rejected");
+		} finally {
+			System.out.println("Clearing resources");
+			try {
+				if (statM != null) {
+					statM.close();
+					System.out.println("Statment closed");
+				}
+
+				if (con != null) {
+					con.close();
+					System.out.println("DB connection closed");
+				}
+
+			} catch (SQLException e) {
+				System.out.println("Error while clearing resources");
+			}
 		}
 
 	}
