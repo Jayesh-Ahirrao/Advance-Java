@@ -53,6 +53,25 @@ public class Jdbc {
 			System.out.println("Connection refused");
 			e.printStackTrace();
 
+		} finally {
+			System.out.println("Clearing resources");
+			try {
+				if (rs != null) {
+					rs.close();
+					System.out.println("Result Set closed");
+				}
+				if (stmt != null) {
+					stmt.close();
+					System.out.println("Statement closed");
+				}
+				if (con != null) {
+					con.close();
+					System.out.println("DB connection closed");
+				}
+			} catch (SQLException e) {
+				System.out.println("Error while clearing resources");
+			}
+
 		}
 	}
 
